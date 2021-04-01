@@ -6,6 +6,10 @@ $(document).ready(function () {
 			var hyperlink_reference = $(this).attr("href")
 			$(this).attr("href", hyperlink_reference.replace(non_proxy_url, proxy_url))
 		})	
+		$('[data-module-url*="'+non_proxy_url+'"]').attr("data-module-url", function() {
+			var hyperlink_reference = $(this).attr("data-module-url")
+			$(this).attr("href", hyperlink_reference.replace(non_proxy_url, proxy_url))
+		})
 		$('a:contains('+non_proxy_url+')').text(function() {
 			var hr_text = $(this).text()
 			$(this).text(hr_text.replace(non_proxy_url, proxy_url))
